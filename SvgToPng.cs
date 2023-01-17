@@ -16,10 +16,8 @@ public static class SvgToPng
 {
     [FunctionName("SvgToPng")]
     public static async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req, ILogger log)
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req)
     {
-        log.LogInformation("C# HTTP trigger function processed a request.");
-
         var url = req.Query["url"];
         _ = int.TryParse(req.Query["width"], out int width);
         _ = int.TryParse(req.Query["height"], out int height);
