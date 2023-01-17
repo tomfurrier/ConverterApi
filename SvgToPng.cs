@@ -14,7 +14,7 @@ namespace ConverterApi;
 
 public static class SvgToPng
 {
-    [FunctionName("SvgToPng")]
+    [FunctionName("svg-to-png")]
     public static async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req)
     {
